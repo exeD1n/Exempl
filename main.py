@@ -9,20 +9,29 @@ try:
 
         if go == 1:
             with connection.cursor() as cursor:
-                select_name_grup = "SELECT id('Номер заметки'), data, name FROM Zametki;"
+                select_name_grup = "SELECT id 'Номер заметки', data 'Дата заметки', name 'Послание' FROM Zametki;"
                 cursor.execute(select_name_grup)
                 rows = cursor.fetchall()
                 for i in rows:
                     print(i)
+                print('\n')
         
-        if go == 4:
+        if go == 2:
+            delete=int(input('Номер заметки которую вы хотите удалить'))
             with connection.cursor() as cursor:
-                select_name_grup = "SELECT id, data, name FROM Zametki;"
+                select_name_grup = f"DELETE FROM Zametki WHERE id = {delete};"
                 cursor.execute(select_name_grup)
                 rows = cursor.fetchall()
-                for i in rows:
-                    print(i)
+                print('Ваша запись удалена\n')
 
+        if go == 4:
+            datamet=(input('Напишите пожалуйста дату заметки через точку'))
+            namezamtki=(input('Напишите пожалуйста вашу заметку'))
+            with connection.cursor() as cursor:
+                select_name_grup = f"ЗАПРОС"
+                cursor.execute(select_name_grup)
+                rows = cursor.fetchall()
+                print('Ваша запись добавлена\n')
 
 except Exception as ex:
     print('Connection refused')

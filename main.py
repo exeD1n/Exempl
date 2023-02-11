@@ -24,14 +24,14 @@ try:
                 rows = cursor.fetchall()
                 print('Ваша запись удалена\n')
 
-        if go == 4:
-            datamet=(input('Напишите пожалуйста дату заметки через точку'))
-            namezamtki=(input('Напишите пожалуйста вашу заметку'))
-            with connection.cursor() as cursor:
-                select_name_grup = f"ЗАПРОС"
-                cursor.execute(select_name_grup)
-                rows = cursor.fetchall()
-                print('Ваша запись добавлена\n')
+        # if go == 4:
+        #     datamet=(input('Напишите пожалуйста дату заметки через точку'))
+        #     namezamtki=(input('Напишите пожалуйста вашу заметку'))
+        #     with connection.cursor() as cursor:
+        #         select_name_grup = f"ЗАПРОС"
+        #         cursor.execute(select_name_grup)
+        #         rows = cursor.fetchall()
+        #         print('Ваша запись добавлена\n')
 
 except Exception as ex:
     print('Connection refused')
